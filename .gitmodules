@@ -76,3 +76,6 @@
 [submodule "vendor/Pymacs-0.23"]
 	path = vendor/Pymacs-0.23
 	url = https://github.com/pinard/Pymacs.git
+[submodule "vendor/ecb"]
+	path = vendor/ecb
+	url = https://github.com/emacsmirror/ecb.git
