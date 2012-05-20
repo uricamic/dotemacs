@@ -55,3 +55,6 @@
 [submodule "3dparty/yasnippet"]
 	path = 3dparty/yasnippet
 	url = https://github.com/emacsmirror/yasnippet.git
+[submodule "3dparty/yasnippet-snippets"]
+	path = 3dparty/yasnippet-snippets
+	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
