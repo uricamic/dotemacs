@@ -1,5 +1,4 @@
-[submodule "vendor/full-ack"]
-	path = vendor/full-ack
+pymacs	path = vendor/full-ack
 	url = https://github.com/nschum/full-ack.git
 [submodule "vendor/deft"]
 	path = vendor/deft
@@ -13,9 +12,6 @@
 [submodule "vendor/mulled"]
 	path = vendor/mulled
 	url = https://github.com/k-talo/multiple-line-edit.el.git
-[submodule "vendor/cedet"]
-	path = vendor/cedet
-	url = https://github.com/emacsmirror/cedet.git
 [submodule "vendor/magit"]
 	path = vendor/magit
 	url = https://github.com/magit/magit.git
@@ -70,9 +66,6 @@
 [submodule "vendor/org-s5"]
 	path = vendor/org-s5
 	url = git://github.com/eschulte/org-S5.git
-[submodule "vendor/Pymacs"]
-	path = vendor/Pymacs
-	url = https://github.com/pinard/Pymacs.git
 [submodule "vendor/ecb"]
 	path = vendor/ecb
 	url = https://github.com/emacsmirror/ecb.git
