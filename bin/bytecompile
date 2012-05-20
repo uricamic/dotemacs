@@ -22,7 +22,7 @@
 # CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 
-VENDOR_DIR=$HOME"/.emacs.d/vendor"
+VENDOR_DIR=$HOME"/.emacs.d/3dparty"
 cd "$VENDOR_DIR"
 PACKAGES=$(find . -maxdepth 1 -type d \( ! -iname "." \) -printf "%f\n")
 

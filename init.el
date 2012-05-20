@@ -1,5 +1,5 @@
-(add-to-list 'load-path "~/.emacs.d/vendor")
-(let ((default-directory "~/.emacs.d/vendor"))
+(add-to-list 'load-path "~/.emacs.d/3dparty")
+(let ((default-directory "~/.emacs.d/3dparty"))
   (normal-top-level-add-subdirs-to-load-path))
 
 (add-to-list 'load-path "~/.emacs.d/themes")
@@ -14,8 +14,8 @@
 
 (ignore-errors (load-file "~/.emacs.d/post-startup.el"))
 
-(setq custom-file "~/.emacs.d/customizations.el")
-(load custom-file 'noerror)
+;(setq custom-file "~/.emacs.d/customizations.el")
+;(load custom-file 'noerror)
 (put 'set-goal-column 'disabled nil)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
