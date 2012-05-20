@@ -1,6 +1,0 @@
-# This was cloned from a TextMate bundle for yasnippet.
-#name : :nth-last-child(n)
-#key : :
-#condition : (when (boundp 'jquery-project) jquery-project)
-# --
-:nth-last-child(${1:n})$0

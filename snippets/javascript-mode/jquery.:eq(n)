@@ -1,6 +1,0 @@
-# This was cloned from a TextMate bundle for yasnippet.
-#name : :eq(n)
-#key : :
-#condition : (when (boundp 'jquery-project) jquery-project)
-# --
-:eq(${1:n})$0

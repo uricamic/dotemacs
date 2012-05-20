@@ -1,6 +1,0 @@
-# This was cloned from a TextMate bundle for yasnippet.
-#name : :last-of-type
-#key : :
-#condition : (when (boundp 'jquery-project) jquery-project)
-# --
-:last-of-type

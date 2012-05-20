@@ -1,6 +1,0 @@
-# This was cloned from a TextMate bundle for yasnippet.
-#name : :first-child
-#key : :
-#condition : (when (boundp 'jquery-project) jquery-project)
-# --
-:first-child

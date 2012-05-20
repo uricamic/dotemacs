@@ -1,6 +1,0 @@
-# This was cloned from a TextMate bundle for yasnippet.
-#name : :first-of-type
-#key : :
-#condition : (when (boundp 'jquery-project) jquery-project)
-# --
-:first-of-type
