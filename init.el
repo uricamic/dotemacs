@@ -4,7 +4,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes/solarized-emacs")
-;(add-to-list 'load-path "~/.emacs.d/themes")
+
 
 (ignore-errors (load-file "~/.emacs.d/secrets.el"))
 (ignore-errors (load-file "~/.emacs.d/pre-startup.el"))
@@ -14,8 +14,8 @@
 
 (ignore-errors (load-file "~/.emacs.d/post-startup.el"))
 
-;(setq custom-file "~/.emacs.d/customizations.el")
-;(load custom-file 'noerror)
+(setq custom-file "~/.emacs.d/customizations.el")
+(load custom-file 'noerror)
 (put 'set-goal-column 'disabled nil)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -30,3 +30,4 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'upcase-region 'disabled nil)
+(put 'scroll-left 'disabled nil)
