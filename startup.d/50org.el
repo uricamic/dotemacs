@@ -12,14 +12,24 @@
 (setq org-log-done t)
 
 (setq org-agenda-files (list "~/org/work.org"
-                             "~/org/school.org" 
+                             "~/org/school.org"
                              "~/org/home.org"))
-                             
-                             
+
+
 (require 'org-latex)
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
 (add-to-list 'org-export-latex-classes
              '("article"
                "\\documentclass{article}"
-               ("\\section{%s}" . "\\section*{%s}")))  
+               ("\\section{%s}" . "\\section*{%s}")))
+
+
+(defun org-mode-reftex-setup ()
+  (load-library "reftex")
+  (and (buffer-file-name)
+       (file-exists-p (buffer-file-name))
+       (reftex-parse-all))
+  (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
+)
+(add-hook 'org-mode-hook 'org-mode-reftex-setup)
