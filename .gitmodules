@@ -58,3 +58,9 @@
 [submodule "3dparty/yasnippet-snippets"]
 	path = 3dparty/yasnippet-snippets
 	url = https://github.com/AndreaCrotti/yasnippet-snippets.git
+[submodule "3dparty/pysmell"]
+	path = 3dparty/pysmell
+	url = https://github.com/orestis/pysmell.git
+[submodule "3dparty/helm"]
+	path = 3dparty/helm
+	url = https://github.com/emacs-helm/helm.git
