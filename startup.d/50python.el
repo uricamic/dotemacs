@@ -3,7 +3,23 @@
 (require 'pymacs)
 
 (require 'python)
-(setq python-shell-interpreter "python")
+
+(require 'pysmell)
+(add-hook 'python-mode-hook (lambda () (pysmell-mode 1)))
+
+(require 'helm-config)
+
+;(setq python-shell-interpreter "ipython")
+
+;(load-file "~/.emacs.d/vendor/cedet/cedet-devel-load.el")
+;(load-file "/usr/local/share/emacs/24.0.92/lisp/cedet/cedet.el")
+
+;(require 'cedet)
+
+;(require 'ecb)
+
+;(require 'ecb-autoloads)
+
 
 (setq
 python-shell-interpreter "ipython"
