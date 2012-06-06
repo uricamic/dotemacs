@@ -48,6 +48,7 @@ If the current buffer is:
    (make-local-variable 'mouse-yank-at-point)
    (make-local-variable 'transient-mark-mode)
    (auto-fill-mode -1)
+   (compilation-shell-minor-mode t)
    (setq mouse-yank-at-point t
          term-scroll-to-bottom-on-output nil
          term-scroll-show-maximum-output nil
