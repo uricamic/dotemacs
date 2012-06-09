@@ -64,3 +64,6 @@
 [submodule "3dparty/helm"]
 	path = 3dparty/helm
 	url = https://github.com/emacs-helm/helm.git
+[submodule "3dparty/cedet"]
+	path = 3dparty/cedet
+	url = https://github.com/emacsmirror/cedet.git

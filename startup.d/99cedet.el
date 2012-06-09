@@ -1,22 +1,36 @@
-(add-to-list 'load-path "~/.emacs.d/vendor/cedet/ede");
-(add-to-list 'load-path "~/.emacs.d/vendor/cedet/eieio")
-(add-to-list 'load-path "~/.emacs.d/vendor/cedet/semantic")
-(add-to-list 'load-path "~/.emacs.d/vendor/cedet/speedbar")
-(add-to-list 'load-path "~/.emacs.d/vendor/cedet/srecode")
-(load-file "~/.emacs.d/vendor/cedet/common/cedet.el")
-  (global-ede-mode t)
-  (semantic-load-enable-code-helpers)
-  (global-srecode-minor-mode 1)
+;(add-to-list 'load-path "~/.emacs.d/vendor/cedet/ede");
+;(add-to-list 'load-path "~/.emacs.d/vendor/cedet/eieio")
+;(add-to-list 'load-path "~/.emacs.d/vendor/cedet/semantic")
+;(add-to-list 'load-path "~/.emacs.d/vendor/cedet/speedbar")
+;(add-to-list 'load-path "~/.emacs.d/vendor/cedet/srecode")
+;(load-file "~/.emacs.d/vendor/cedet/common/cedet.el")
+ 
 
-(require 'semantic-ia)
+(add-to-list 'load-path "~/.emacs.d/3dparty/cedet-1.1/ede");
+(add-to-list 'load-path "~/.emacs.d/3dparty/cedet-1.1/eieio")
+(add-to-list 'load-path "~/.emacs.d/3dparty/cedet-1.1/speedbar")
+(add-to-list 'load-path "~/.emacs.d/3dparty/cedet-1.1/srecode")
+(add-to-list 'load-path "~/.emacs.d/3dparty/cedet-1.1/semantic")
+(load-file "~/.emacs.d/3dparty/cedet-1.1/common/cedet.el")
+
+
+
+
+(global-ede-mode t)
+(semantic-load-enable-excessive-code-helpers)
+(semantic-load-enable-code-helpers)
+(global-srecode-minor-mode 1)
+
+(require 'semantic)
 (setq semanticdb-default-save-directory "~/.emacs.d/emacs-meta/semantic.cache/")
 (semantic-load-enable-excessive-code-helpers)
 (global-semantic-stickyfunc-mode -1)
 (global-semantic-decoration-mode -1)
+
 (global-senator-minor-mode -1)
 
 (semantic-load-enable-excessive-code-helpers)
-;;(semantic-load-enable-semantic-debugging-helpers)
+(semantic-load-enable-semantic-debugging-helpers)
 
 (setq senator-minor-mode-name "SN")
 (setq semantic-imenu-auto-rebuild-directory-indexes nil)
@@ -80,8 +94,11 @@
 (custom-set-variables
  '(semantic-idle-scheduler-idle-time 3)
  '(semantic-self-insert-show-completion-function (lambda nil (semantic-ia-complete-symbol-menu (point))))
- '(global-semantic-tag-folding-mode t nil (semantic-util-modes)))
-(global-semantic-folding-mode 1)
+;;; '(global-semantic-tag-folding-mode t nil (semantic-util-modes))
+ )
+
+
+;;;(global-semantic-folding-mode 1)
 
 ;; gnu global support
 (require 'semanticdb-global)
@@ -121,7 +138,7 @@
 
 
 ;;
-;;(global-semantic-idle-tag-highlight-mode 1)
+;;;;;;;;;;;(global-semantic-idle-tag-highlight-mode 1)
 
 ;;; ede customization
 (require 'semantic-lex-spp)
