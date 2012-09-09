@@ -83,7 +83,7 @@
 ; Smart quotes
 ; http://www.emacswiki.org/emacs/AUCTeX#toc20
 ; ——————————————————————————————————————
-(setq TeX-open-quote "<<") (setq TeX-close-quote ">>")
+; (setq TeX-open-quote "<<") (setq TeX-close-quote ">>")
 
 
 ;; ; ——————————————————————————————————————
