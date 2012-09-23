@@ -8,3 +8,20 @@
   '(empty lines-tail tabs tab-mark trailing))
 
 (global-whitespace-mode 1)
+
+
+;; http://habrahabr.ru/post/151653/
+;; space mode
+(setq indent-tabs-mode nil) ;
+
+;; устанавливаем ширину таба в 4 символа
+(setq tab-width 4)
+(setq c-basic-offset 4)
+(setq sgml-basic-offset 4)
+
+; ширина таба 4, индентация табами
+(add-hook 'python-mode-hook
+  (lambda()
+    (setq tab-width 4)
+    (setq indent-tabs-mode t)
+))
