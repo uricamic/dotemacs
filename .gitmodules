@@ -67,3 +67,6 @@
 [submodule "3dparty/cedet"]
 	path = 3dparty/cedet
 	url = https://github.com/emacsmirror/cedet.git
+[submodule "3dparty/projectile"]
+	path = 3dparty/projectile
+	url = git://github.com/bbatsov/projectile.git
