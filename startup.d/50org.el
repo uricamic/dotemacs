@@ -23,8 +23,8 @@
            (lambda ()
              ;; yasnippet
              (make-variable-buffer-local 'yas/trigger-key)
-             (setq yas/trigger-key [tab])
-             (define-key yas/keymap [tab] 'yas/next-field-group)
+;;             (setq yas/trigger-key [tab])
+;;             (define-key yas/keymap [tab] 'yas/next-field-group)
              ;; flyspell mode to spell check everywhere
              (flyspell-mode 1)
              )
