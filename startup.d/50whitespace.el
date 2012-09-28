@@ -18,7 +18,7 @@
 (setq tab-width 4)
 (setq c-basic-offset 4)
 (setq sgml-basic-offset 4)
-
+(c-set-offset 'substatement-open 0)
 ; ширина таба 4, индентация табами
 (add-hook 'python-mode-hook
   (lambda()
