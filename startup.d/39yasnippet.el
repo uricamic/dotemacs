@@ -3,3 +3,5 @@
 (yas/initialize)
 (setq yas/prompt-functions '(yas/dropdown-prompt))
 (setq yas/wrap-around-region t)
+
+(global-set-key (kbd "C-SPC") 'yas/expand)
