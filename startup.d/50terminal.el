@@ -45,17 +45,31 @@ If the current buffer is:
         (ansi-term term-cmd)))))
 
 (defun term-my-hook ()
-   (make-local-variable 'mouse-yank-at-point)
-   (make-local-variable 'transient-mark-mode)
-   (auto-fill-mode -1)
-   (compilation-shell-minor-mode t)
-   (setq mouse-yank-at-point t
-         term-scroll-to-bottom-on-output nil
-         term-scroll-show-maximum-output nil
-         term-buffer-maximum-size 1024
-         transient-mark-mode nil
-         tab-width 8))
+  (interactive)
+  (make-local-variable 'mouse-yank-at-point)
+  (make-local-variable 'transient-mark-mode)
+  (auto-fill-mode -1)
+  (compilation-shell-minor-mode t)
+  (setq mouse-yank-at-point t
+        term-scroll-to-bottom-on-output nil
+        term-scroll-show-maximum-output nil
+        term-buffer-maximum-size 1024
+        transient-mark-mode nil
+        tab-width 8))
 
 (add-hook 'term-mode-hook 'term-my-hook)
-
 (global-set-key (kbd "<f2>") 'ansi-term-visit-dwim)
+
+
+
+(defun kill-buffer-when-shell-command-exit ()
+  "Close current buffer when `shell-command' exit."
+  (let ((process (ignore-errors (get-buffer-process (current-buffer)))))
+    (when process
+      (set-process-sentinel process
+                            (lambda (proc change)
+                              (when (string-match "\\(finished\\|exited\\Debugger\\)" change)   ;;(when (string-match "\\(finished\\|exited\\)" change)
+                                (kill-buffer (process-buffer proc)))))))
+  )
+
+(add-hook 'term-mode-hook 'kill-buffer-when-shell-command-exit)
