@@ -25,7 +25,7 @@
   (interactive)
 ;;  (sr-speedbar-close)
   (compile (concat "g++ " (buffer-name (current-buffer)) " -g -pg -o debug_main"))
-  (gdb "gdb -i=mi ~/tmp/./debug_main")
+  (gdb "gdb -i=mi ./debug_main")
   )
 
 
@@ -84,26 +84,32 @@
   "Kill gdb process."
   (interactive)
   (tool-bar-mode -1)
-  ;;(with-current-buffer gud-comint-buffer (comint-skip-input))
-  ;;(kill-process (get-buffer-process gud-comint-buffer))
-  ;;(sleep-for 1)
+  (with-current-buffer gud-comint-buffer (comint-skip-input))
+ (kill-process (get-buffer-process gud-comint-buffer))
+;;  (sleep-for 1)
 
-  ;;  (kill-buffer (buffer-name gud-comint-buffer))
+  (kill-buffer (buffer-name gud-comint-buffer))
   (delete-other-windows)
-  ;;(if need-restory-nextide-panel (nextide-panel-toggle))
-  (speedbar-change-initial-expansion-list "files")
+;;  (if need-restory-nextide-panel (nextide-panel-toggle))
+;;  (speedbar-change-initial-expansion-list "files")
 
   (defvar buffer-list nil)
 
-  (dolist (item  '("*gud-" "*stack frames of "  "*locals of " "*threads of " "*input/output of " "*breakpoints of " "*compilation of "))
+  (dolist (item  '("*gud-" "*stack frames of "  "*locals of " "*threads of " "*input/output of " "*breakpoints of "))
     (setq buffer-list (cons (concat item "debug_main*") buffer-list))
     )
 
+  (setq buffer-list (cons "*Buffer List*" buffer-list))
+  (setq buffer-list (cons "*compilation*" buffer-list))
+
   ;;   (message "%S" buffer-list)
   ;;  (funcall kill-other-buffers 'buffer-list)
-  (mapc 'kill-buffer
-        (delq (current-buffer)
-              (remove-if 'buffer-file-name (buffer-list))))
+;;  (apply 'kill-buffer buffer-list)
+;;  (mapc 'kill-buffer
+;;        (delq (current-buffer)
+;;              (remove-if 'buffer-file-name (buffer-list))))
+
+  (mapc 'kill-buffer buffer-list)
   )
 
 (defun gdb-key-settings ()
@@ -142,6 +148,13 @@
 
 (defun kill-buffer-when-gdb-command-quit ()
   "Close current buffer when `shell-command' exit."
+
+  (defvar buffer-list nil)
+
+  (dolist (item  '("*stack frames of "  "*locals of " "*threads of " "*breakpoints of " "*compilation of "))
+    (setq buffer-list (cons (concat item "debug_main*") buffer-list))
+    )
+
   (let ((process (ignore-errors (get-buffer-process (current-buffer)))))
     (when process
       (set-process-sentinel process
@@ -155,8 +168,10 @@
                             )
       )
     )
+
+  (funcall kill-other-buffers buffer-list)
   )
 
 
-(add-hook 'gdb-mode-hook 'kill-buffer-when-gdb-command-quit)
-(add-hook 'c-mode-hook 'kill-buffer-when-gdb-command-quit)
+;;(add-hook 'gdb-mode-hook 'kill-buffer-when-gdb-command-quit)
+;;(add-hook 'c-mode-hook 'kill-buffer-when-gdb-command-quit)
