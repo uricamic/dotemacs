@@ -13,6 +13,9 @@
 (setq visible-bell t)
 (setq ido-enable-flex-matching t)
 (column-number-mode 1)
+
+(require 'tramp)
+
 (setq-default
  frame-title-format
  '(:eval
@@ -25,6 +28,7 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "")
 (setq make-backup-files nil)
+
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -34,6 +38,11 @@
 
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
 (setq warning-suppress-types nil)
+
+;; linum-mode
+(autoload 'linum-mode "linum" "toggle line numbers on/off" t)
+(global-set-key (kbd "C-c L") 'linum-mode)
+(linum-mode 1)
 
 (defadvice flymake-start-syntax-check-process
   (after my-flymake-start-syntax-check-process
