@@ -6,13 +6,12 @@
 (add-to-list 'load-path "~/.emacs.d/themes/solarized-emacs")
 
 
-(ignore-errors (load-file "~/.emacs.d/secrets.el"))
-(ignore-errors (load-file "~/.emacs.d/pre-startup.el"))
+;;(ignore-errors (load-file "~/.emacs.d/secrets.el"))
+;;(ignore-errors (load-file "~/.emacs.d/pre-startup.el"))
 
-(require 'startupd)
-(startupd-load-files)
+(load-file "~/.emacs.d/startup.el")
 
-(ignore-errors (load-file "~/.emacs.d/post-startup.el"))
+;;(ignore-errors (load-file "~/.emacs.d/post-startup.el"))
 
 (setq custom-file "~/.emacs.d/customizations.el")
 (load custom-file 'noerror)
