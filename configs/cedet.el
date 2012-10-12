@@ -191,7 +191,7 @@
 (global-ede-mode t)
 (ede-enable-generic-projects)
 
-;; maven-based projects
+;;maven-based projects
 ;;(ede-maven2-project "clojure-hadoop" :file "~/projects/clojure-hadoop/pom.xml")
 
 ;; cpp-tests project definition
@@ -293,3 +293,27 @@
 (add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat qt4-base-dir "/qconfig.h"))
 (add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat qt4-base-dir "/qconfig-dist.h"))
 (add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat qt4-base-dir "/qglobal.h"))
+
+
+;; ACCPM
+(setq accpm-base-dir "/home/kostia/research/oboe/build/include")
+(semantic-add-system-include accpm-base-dir 'c++-mode)
+(add-to-list 'auto-mode-alist (cons accpm-base-dir 'c++-mode))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/AccpmBlasInterface.h"))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/AccpmDynMatrix.h"))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/AccpmSignal.h"))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/config.h"))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/Oracle.h"))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/QpGenerator.h"))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/AccpmDefs.h"))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/AccpmGenMatrix.h"))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/AccpmVector.h"))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/ExitCode.h"))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/Parameters.h"))
+(add-to-list 'semantic-lex-c-preprocessor-symbol-file (concat accpm-base-dir "/Timer.h"))
+
+
+
+;; Boost
+(setq accpm-base-dir "/usr/include/boost")
+(semantic-add-system-include accpm-base-dir 'c++-mode)

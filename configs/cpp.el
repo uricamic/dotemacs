@@ -58,7 +58,7 @@
   (shell-command (format " \"%s\" -o %s %s %s && ./%s"
                          (or (getenv "CC") "g++")
                          (file-name-sans-extension file)
-                         (or (getenv "CFLAGS") "-g -ansi -Wno-long-long -Wall")
+                         (or (getenv "CFLAGS") "-g -ansi -Wno-long-long -Wall -DLOCAL_HOST=Ka")
                          file
                          (file-name-sans-extension file)
                          )
@@ -134,11 +134,11 @@
 			"typedef pair<int,int> pii;\n\n"
 			"/*** TEMPLATE CODE ENDS HERE */\n\n\n"
 			"int main() {\n"
-			"#ifndef ONLINE_JUDGE\n"
+			"#ifdef LOCAL_HOST\n"
 			"      freopen(\"" (downcase name) "_input.txt\",\"r\",stdin);\n"
 			"      //freopen(\"" (downcase name) "_output.txt\",\"w\",stdout);\n"
 			"#endif\n\n\n\n"
-			"#ifdef LocalHost\n"
+			"#ifdef LOCAL_HOST\n"
 			"	printf(\"TIME: %.3lf\\n\",double(clock())/CLOCKS_PER_SEC);\n"
 			"#endif\n\n"
 			"  return 0;\n"
