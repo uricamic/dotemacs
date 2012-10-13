@@ -13,3 +13,8 @@
 (add-hook 'dired-mode-hook
           (lambda ()
             (local-set-key "E" 'dired-gnome-open-file)))
+
+;; single dired buffer
+(eval-after-load 'dired '(progn (require 'joseph-single-dired)))
+;; instill dired+
+(require 'dired+)
