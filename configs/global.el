@@ -67,3 +67,7 @@
 (setq enable-recursive-minibuffers t)
 (follow-mode t)
 (setq redisplay-dont-pause t)
+
+
+;;
+(require 'menu-bar+)
