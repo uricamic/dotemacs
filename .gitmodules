@@ -76,3 +76,6 @@
 [submodule "3dparty/xscope"]
 	path = 3dparty/xscope
 	url = git://github.com/vmfhrmfoaj/cscope-el.git
+[submodule "3dparty/bookmarkplus"]
+	path = 3dparty/bookmarkplus
+	url = git://github.com/quodlibetor/bookmarkplus-github.git
