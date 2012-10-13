@@ -79,3 +79,6 @@
 [submodule "3dparty/bookmarkplus"]
 	path = 3dparty/bookmarkplus
 	url = git://github.com/quodlibetor/bookmarkplus-github.git
+[submodule "3dparty/icicles"]
+	path = 3dparty/icicles
+	url = git://github.com/emacsmirror/icicles.git
