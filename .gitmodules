@@ -73,3 +73,6 @@
 [submodule "3dparty/emacs-clang-complete-async"]
 	path = 3dparty/emacs-clang-complete-async
 	url = git://github.com/Golevka/emacs-clang-complete-async.git
+[submodule "3dparty/xscope"]
+	path = 3dparty/xscope
+	url = git://github.com/vmfhrmfoaj/cscope-el.git
