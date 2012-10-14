@@ -11,13 +11,11 @@
 (defun my-project-root-build-locator (config root-dir)
   "Locates a build directory in the project root, uses
 project-root-build-directories to look up the name."
-  (interactive)
   (cdr (assoc config my-project-root-build-directories)))
 
 (defun my-load-project (dir)
   "Load a project of type `ede-cmake-cpp-project' for the directory DIR.
      Return nil if there isn't one."
-  (interactive)
   (ede-cmake-cpp-project
    (file-name-nondirectory (directory-file-name dir))
    :directory dir
