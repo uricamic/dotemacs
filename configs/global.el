@@ -71,3 +71,6 @@
 
 ;;
 (require 'menu-bar+)
+
+;;
+(require 'icicles)
