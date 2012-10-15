@@ -82,3 +82,6 @@
 [submodule "3dparty/icicles"]
 	path = 3dparty/icicles
 	url = git://github.com/emacsmirror/icicles.git
+[submodule "3dparty/python-mode"]
+	path = 3dparty/python-mode
+	url = git://github.com/emacsmirror/python-mode.git
